@@ -9,14 +9,17 @@ class Begin {
 
     public Begin() {
         boolean break_out = false;
+        //runs until the user confirms their choices
         while (!break_out) {
+                //runs until the user enters valid dimensions
                 while(this.width * this.height < 4) {
                     this.width = getInput("What width do you want?");
                     this.height = getInput("What height do you want?");
-                    if (this.width * this.height < 4) System.out.println("NOT ENOUGH TILES!! Minimum is 2 by 2");
+                    if (this.width * this.height < 9 || (this.width < 3 || this.height < 3)) System.out.println("NOT ENOUGH TILES!! Minimum is 3 by 3");
                 }
                 this.mines = getInput("How many mines do you want?");
                 determineMaxMines(this.width, this.height);
+                //runs until the user enters a valid mine count
                 while (!verifyMines(this.mines, this.maximum)) {
                     if (this.mines <= 0) this.mines = getInput("NOT ENOUGH MINES!! Enter a valid amount of mines");
                     else this.mines = getInput("TOO MANY MINES!! Enter a valid amount of mines");
