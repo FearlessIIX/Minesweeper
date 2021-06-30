@@ -134,16 +134,6 @@ public class Tile {
     }
 
     public String toString() {
-        /*if (checked) {
-            return ("@ " + Integer.toString(this.safety) + " " + this.t_number);
-        }
-        else {
-            return ("? " + Integer.toString(this.safety) + " " + this.t_number);
-        }
-        if (this.is_mine) return "*";
-        else return Integer.toString(this.safety);
-
-        */
         if (revealed) {
             if (this.is_mine) return ("*");
             else return Integer.toString(this.safety);
@@ -178,10 +168,6 @@ public class Tile {
         return this.fin_check;
     }
 
-    public boolean popped() {
-        return this.popped;
-    }
-
     public void check() {
         this.checked = true;
     }
@@ -192,10 +178,6 @@ public class Tile {
 
     public void finCheck() {
         this.fin_check = true;
-    }
-
-    public void pop() {
-        this.popped = true;
     }
 
     public void reveal() {
