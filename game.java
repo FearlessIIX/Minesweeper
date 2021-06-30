@@ -3,12 +3,12 @@ import java.util.Scanner;
 class Game {
     private Vector<Tile> Grid;
     private int width;
-    private int height;
+    private int mines;
     private String method;
-    public Game(Vector<Tile> GRID, int wh, int hg) {
+    public Game(Vector<Tile> GRID, int wh, int mines) {
         this.Grid = GRID;
         this.width = wh;
-        this.height = hg;
+        this.mines = mines;
     }
     public void changeMethod(String mtd) {
         this.method = mtd;
@@ -19,8 +19,8 @@ class Game {
     public int getWidth() {
         return this.width;
     }
-    public int getHeight() {
-        return this.height;
+    public int getMines() {
+        return this.mines;
     }
     public Vector<Tile> getGrid() {
         return this.Grid;
@@ -67,6 +67,15 @@ class Screen {
 
     public String userInput() {
         Scanner scan = new Scanner(System.in);
-        return scan.nextLine();
+        while (true) {
+            try {
+                return scan.nextLine();
+            }
+            catch (Exception e) {
+                System.out.println("EXPECTED A NUMBER!!");
+            }
+
+        }
+        //return "0";
     }
 }
