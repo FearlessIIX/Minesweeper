@@ -21,7 +21,7 @@ class Begin {
                 }
                 this.mines = getInput("How many mines do you want?");
                 determineMaxMines(this.width, this.height);
-
+            
                 //runs until the user enters a valid mine count
                 while (!verifyMines(this.mines, this.maximum)) {
                     if (this.mines <= 0) this.mines = getInput("NOT ENOUGH MINES!! Enter a valid amount of mines");
