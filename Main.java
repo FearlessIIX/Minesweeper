@@ -1,5 +1,4 @@
 import java.util.*;
-import javax.swing.*;
 public class Main {
 
     public static void clear() {
@@ -9,12 +8,11 @@ public class Main {
     public static void main(String[] args) {
 
         // this is manually changed. Options are: 'index' , and 'cord'
+        //********************************************************//
         String method = "cord";
 
         Begin SETUP = new Begin();
-
         System.out.println("\n \n \n \n \n \n \n \n \n \n ");
-        //clear();  //clears the console after startup
 
         int mines = SETUP.fetch("mines");
         int width = SETUP.fetch("width");
@@ -26,7 +24,7 @@ public class Main {
         TileGen GEN_CON = new TileGen(MINES, width, height);
         Vector<Tile> STORE = GEN_CON.getRet();
 
-        Game GAME = new Game(STORE, width, height);
+        Game GAME = new Game(STORE, width, mines);
         GAME.changeMethod(method);
         Screen SCREEN = new Screen();
 
