@@ -27,8 +27,6 @@ class TileGen {
     private void appendTileSur(Vector<Tile> GG) {
         for (int countZ = 0; countZ < GG.size(); countZ++) {
             GG.get(countZ).genSur(GG, this.gdx, this.gdy);
-
-
         }
     }
     public void pr(Vector<Tile> vec, int start, int xc) {
